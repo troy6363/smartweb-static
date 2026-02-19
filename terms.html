@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | SmartWeb Memphis</title>
+    <meta name="robots" content="noindex">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #050A14;
+            --cyan: #22d3ee;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        /* ── Noise texture overlay ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: white;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #22d3ee;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1em;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: #22d3ee;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── NAVIGATION (Simplified) ── -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-[#050A14]/90 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                    class="h-6 w-auto object-contain mix-blend-screen">
+                <span class="text-white font-semibold text-sm">SmartWeb Memphis</span>
+            </a>
+            <a href="index.html" class="text-sm text-white/60 hover:text-white flex items-center gap-2 group">
+                <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i> Back
+            </a>
+        </div>
+    </header>
+
+    <!-- ── MAIN CONTENT ── -->
+    <main class="relative z-10 w-full min-h-screen pt-32 pb-20 px-5 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-center mb-10">Terms of Service</h1>
+
+            <p class="text-white/40 text-sm mb-8">Last Updated: February 18, 2025</p>
+
+            <p>Welcome to SmartWeb Memphis. By accessing or using our website and services, you agree to be bound by
+                these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+
+            <h2>1. Services</h2>
+            <p>SmartWeb Memphis provides website design, development, and lead generation services for businesses. We
+                reserve the right to modify, suspend, or discontinue any aspect of our services at any time.</p>
+
+            <h2>2. User Responsibilities</h2>
+            <p>You agree to provide accurate information when contacting us or using our services. You are responsible
+                for maintaining the confidentiality of any account information and for all activities that occur under
+                your account.</p>
+
+            <h2>3. Intellectual Property</h2>
+            <p>All content, designs, and code created by SmartWeb Memphis remain our intellectual property until full
+                payment is received. Upon payment, you are granted a license to use the website for your business
+                purposes.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>SmartWeb Memphis shall not be liable for any indirect, incidental, special, consequential, or punitive
+                damages arising out of or related to your use of our services.</p>
+
+            <h2>5. Governing Law</h2>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of
+                Tennessee, without regard to its conflict of law principles.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about these Terms of Service, please contact us at:</p>
+            <p>
+                <strong>SmartWeb Memphis</strong><br>
+                Email: info@smartwebmemphis.com
+            </p>
+        </div>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="relative z-10 w-full border-t border-white/[0.06] px-5 md:px-8 py-10 bg-[#050A14]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2.5">
+                <span class="text-white/50 text-sm font-medium">SmartWeb Memphis</span>
+            </div>
+            <div class="flex gap-6 text-xs text-white/30">
+                <a href="privacy.html" class="hover:text-white/60 transition-colors">Privacy</a>
+                <a href="terms.html" class="text-white/60">Terms</a>
+                <a href="booking.html" class="hover:text-white/60 transition-colors">Contact</a>
+            </div>
+            <div class="test-center md:text-right">
+                <p class="text-xs text-white/30">6000 Poplar Avenue Ste 250, Memphis, TN 38119</p>
+                <p class="text-[10px] text-white/20 mt-1">&copy; 2025 SmartWeb Memphis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
