@@ -112,6 +112,63 @@
             color: #fff;
         }
     </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://smartwebmemphis.com/#organization",
+          "name": "SmartWeb Memphis",
+          "url": "https://smartwebmemphis.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://smartwebmemphis.com/assets/logo-lightbulb.png"
+          },
+          "telephone": "+1-901-621-5898",
+          "email": "info@smartwebmemphis.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6000 Poplar Avenue Ste 250",
+            "addressLocality": "Memphis",
+            "addressRegion": "TN",
+            "postalCode": "38119",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Memphis" },
+            { "@type": "AdministrativeArea", "name": "Tennessee" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://smartwebmemphis.com/#website",
+          "url": "https://smartwebmemphis.com/",
+          "name": "SmartWeb Memphis",
+          "publisher": {
+            "@id": "https://smartwebmemphis.com/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://smartwebmemphis.com/terms/#webpage",
+          "url": "https://smartwebmemphis.com/terms",
+          "name": "Terms of Service | SmartWeb Memphis",
+          "description": "Terms of service governing use of the SmartWeb Memphis website and services.",
+          "isPartOf": {
+            "@id": "https://smartwebmemphis.com/#website"
+          },
+          "about": {
+            "@id": "https://smartwebmemphis.com/#organization"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

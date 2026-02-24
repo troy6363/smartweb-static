@@ -116,6 +116,63 @@
             animation: pulse-glow 3s ease-in-out infinite;
         }
     </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "ProfessionalService"],
+          "@id": "https://smartwebmemphis.com/#organization",
+          "name": "SmartWeb Memphis",
+          "url": "https://smartwebmemphis.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://smartwebmemphis.com/assets/logo-lightbulb.png"
+          },
+          "telephone": "+1-901-621-5898",
+          "email": "info@smartwebmemphis.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6000 Poplar Avenue Ste 250",
+            "addressLocality": "Memphis",
+            "addressRegion": "TN",
+            "postalCode": "38119",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Memphis" },
+            { "@type": "AdministrativeArea", "name": "Tennessee" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://smartwebmemphis.com/#website",
+          "url": "https://smartwebmemphis.com/",
+          "name": "SmartWeb Memphis",
+          "publisher": {
+            "@id": "https://smartwebmemphis.com/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": ["WebPage", "ContactPage"],
+          "@id": "https://smartwebmemphis.com/booking/#webpage",
+          "url": "https://smartwebmemphis.com/booking",
+          "name": "Book a Meeting | SmartWeb Memphis",
+          "description": "Schedule a quick video call to see your new website. Pick a time that works for you.",
+          "isPartOf": {
+            "@id": "https://smartwebmemphis.com/#website"
+          },
+          "about": {
+            "@id": "https://smartwebmemphis.com/#organization"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
