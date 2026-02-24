@@ -42,6 +42,54 @@
         }
     </script>
 
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization","ProfessionalService"],
+          "@id": "https://smartwebmemphis.com/#organization",
+          "name": "SmartWeb Memphis",
+          "alternateName": "SmartWeb Memphis (DBA of Meadowland LLC)",
+          "url": "https://smartwebmemphis.com/",
+          "telephone": "+1-901-621-5898",
+          "email": "info@smartwebmemphis.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6000 Poplar Avenue Ste 250",
+            "addressLocality": "Memphis",
+            "addressRegion": "TN",
+            "postalCode": "38119",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Memphis" },
+            { "@type": "AdministrativeArea", "name": "Tennessee" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://apply.smartwebmemphis.com/#website",
+          "url": "https://apply.smartwebmemphis.com/",
+          "name": "SmartWeb Memphis Apply",
+          "publisher": { "@id": "https://smartwebmemphis.com/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": ["WebPage","ContactPage"],
+          "@id": "https://apply.smartwebmemphis.com/#webpage",
+          "url": "https://apply.smartwebmemphis.com/",
+          "name": "See if You Qualify for a Smart Website | SmartWeb Memphis",
+          "description": "Qualification form for SmartWeb Memphis smart website services, including SEO, lead capture, automation, and mobile app management.",
+          "isPartOf": { "@id": "https://apply.smartwebmemphis.com/#website" },
+          "about": { "@id": "https://smartwebmemphis.com/#organization" },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
+
     <style>
         :root {
             --bg: #050A14;
