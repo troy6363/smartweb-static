@@ -13,12 +13,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://smartwebmemphis.com/">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
     <!-- Open Graph -->
     <meta property="og:title" content="SmartWeb Memphis | Custom Web Design & SEO for Memphis Businesses">
     <meta property="og:description"
@@ -42,70 +36,102 @@
     <meta name="geo.position" content="35.1495;-90.0490">
     <meta name="ICBM" content="35.1495, -90.0490">
 
-    <!-- Schema Markup -->
+    <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": ["Organization", "ProfessionalService"],
-          "@id": "https://smartwebmemphis.com/#organization",
-          "name": "SmartWeb Memphis",
-          "url": "https://smartwebmemphis.com/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://smartwebmemphis.com/assets/logo-lightbulb.png"
-          },
-          "telephone": "+1-901-621-5898",
-          "email": "info@smartwebmemphis.com",
-          "address": {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "SmartWeb Memphis",
+        "description": "SmartWeb Memphis builds smart, high-converting websites for local Memphis businesses. Custom web design, local SEO, and lead generation.",
+        "url": "https://smartwebmemphis.com/",
+        "logo": "https://smartwebmemphis.com/assets/logo-v2.png",
+        "image": "https://smartwebmemphis.com/assets/logo-v2.png",
+        "telephone": "+1-901-621-5898",
+        "address": {
             "@type": "PostalAddress",
             "streetAddress": "6000 Poplar Avenue Ste 250",
             "addressLocality": "Memphis",
             "addressRegion": "TN",
             "postalCode": "38119",
             "addressCountry": "US"
-          },
-          "areaServed": [
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 35.1495,
+            "longitude": -90.0490
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Memphis",
+            "sameAs": "https://en.wikipedia.org/wiki/Memphis,_Tennessee"
+        },
+        "serviceType": ["Web Design", "Local SEO", "Website Maintenance", "Lead Generation"],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "50"
+        },
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SmartWeb Memphis",
+        "url": "https://smartwebmemphis.com/",
+        "description": "Custom web design, local SEO, and lead generation for Memphis businesses.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "SmartWeb Memphis",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://smartwebmemphis.com/assets/logo-v2.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
             {
-              "@type": "City",
-              "name": "Memphis"
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://smartwebmemphis.com/"
             },
             {
-              "@type": "AdministrativeArea",
-              "name": "Tennessee"
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://smartwebmemphis.com/#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How It Works",
+                "item": "https://smartwebmemphis.com/#process"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Portfolio",
+                "item": "https://smartwebmemphis.com/#portfolio"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Contact",
+                "item": "https://smartwebmemphis.com/#contact"
             }
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://smartwebmemphis.com/#website",
-          "url": "https://smartwebmemphis.com/",
-          "name": "SmartWeb Memphis",
-          "publisher": {
-            "@id": "https://smartwebmemphis.com/#organization"
-          },
-          "inLanguage": "en-US"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://smartwebmemphis.com/#webpage",
-          "url": "https://smartwebmemphis.com/",
-          "name": "SmartWeb Memphis | Custom Web Design & SEO for Memphis Businesses",
-          "description": "SmartWeb Memphis builds smart, high-converting websites for Memphis businesses — custom web design, local SEO, and lead generation.",
-          "isPartOf": {
-            "@id": "https://smartwebmemphis.com/#website"
-          },
-          "about": {
-            "@id": "https://smartwebmemphis.com/#organization"
-          },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://smartwebmemphis.com/assets/logo-lightbulb.png"
-          },
-          "inLanguage": "en-US"
-        }
-      ]
+        ]
     }
     </script>
 
@@ -135,12 +161,6 @@
             }
         }
     </script>
-
-    <!-- GHL Voice Chat Widget -->
-    <script src="https://beta.leadconnectorhq.com/loader.js"
-        data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="69987f9edcb59dc372affbf2">
-        </script>
 
     <style>
         :root {
@@ -1154,15 +1174,14 @@
                     </div>
                 </div>
 
-                <!-- Client 3: Gleam Mobile Detailing -->
+                <!-- Client 3: Premier Polishing of Memphis -->
                 <div
                     class="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 transition-all hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10">
                     <div
                         class="aspect-video bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center relative overflow-hidden">
                         <!-- Website Preview Image -->
-                        <img src="./assets/gleam.png" alt="Gleam Mobile Detailing Website Preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            style="object-position: left center;">
+                        <img src="./assets/memphispremier.png" alt="Premier Polishing Website Preview"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <a href="https://demo3.smartwebmemphis.com" target="_blank" rel="noopener noreferrer"
@@ -1170,9 +1189,8 @@
                         </div>
                     </div>
                     <div class="p-6 space-y-2 text-center">
-                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Gleam
-                            Mobile
-                            Detailing</h3>
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Premier
+                            Polishing of Memphis</h3>
                         <p class="text-xs text-white/40">Premier Auto Detailing</p>
                     </div>
                 </div>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Client Intake | SmartWeb Memphis</title>
+    <meta name="description" content="Complete our 3-step intake form to start building your SmartWebsite.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#22c55e',
+                            gray: '#f3f4f6',
+                            dark: '#050A14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --brand-green: #22c55e;
+            --brand-gray: #f3f4f6;
+            --brand-dark: #050A14;
+        }
+
+        body {
+            background-color: var(--brand-gray);
+            color: var(--brand-dark);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .step-card {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .step-card.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stepper-item.active .stepper-circle {
+            background-color: var(--brand-green);
+            color: white;
+            border-color: var(--brand-green);
+        }
+
+        .stepper-item.completed .stepper-circle {
+            background-color: var(--brand-green);
+            color: white;
+            border-color: var(--brand-green);
+        }
+
+        .stepper-item.active .stepper-label {
+            color: var(--brand-dark);
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--brand-green);
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-item input {
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--brand-green);
+        }
+
+        .help-text {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen pb-24 md:pb-0">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="./assets/logo-lightbulb.png" alt="Logo" class="h-8 w-auto">
+                <div class="h-6 w-px bg-gray-200"></div>
+                <h1 class="text-lg font-bold tracking-tight">New Client Intake</h1>
+            </div>
+            <div class="text-xs font-medium text-gray-400 hidden sm:block">
+                SmartWeb Memphis
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-10">
+
+        <!-- Welcome Section -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Build Your Smart Website</h2>
+            <p class="text-gray-500 text-sm md:text-base">Complete this 3-step form so we can start building. <span
+                    class="font-medium text-brand-green">Takes about 3–5 minutes.</span></p>
+        </div>
+
+        <!-- Stepper -->
+        <div class="mb-12">
+            <div class="flex items-center justify-between relative">
+                <div class="absolute top-5 left-0 w-full h-0.5 bg-gray-200 -z-10"></div>
+
+                <div class="stepper-item active flex flex-col items-center gap-2 bg-brand-gray px-2" id="step-nav-1">
+                    <div
+                        class="stepper-circle w-10 h-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center font-bold text-gray-400 transition-colors">
+                        1</div>
+                    <span
+                        class="stepper-label text-[10px] md:text-xs uppercase tracking-wider text-gray-400">Business</span>
+                </div>
+
+                <div class="stepper-item flex flex-col items-center gap-2 bg-brand-gray px-2" id="step-nav-2">
+                    <div
+                        class="stepper-circle w-10 h-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center font-bold text-gray-400 transition-colors">
+                        2</div>
+                    <span
+                        class="stepper-label text-[10px] md:text-xs uppercase tracking-wider text-gray-400">Branding</span>
+                </div>
+
+                <div class="stepper-item flex flex-col items-center gap-2 bg-brand-gray px-2" id="step-nav-3">
+                    <div
+                        class="stepper-circle w-10 h-10 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center font-bold text-gray-400 transition-colors">
+                        3</div>
+                    <span
+                        class="stepper-label text-[10px] md:text-xs uppercase tracking-wider text-gray-400">Goals</span>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <span class="text-xs font-bold text-brand-green uppercase tracking-widest" id="step-indicator-text">Step
+                    1 of 3</span>
+            </div>
+        </div>
+
+        <!-- Form Start -->
+        <form name="new-client-intake" method="POST" data-netlify="true" enctype="multipart/form-data">
+            <input type="hidden" name="form-name" value="new-client-intake">
+
+            <!-- STEP 1: Business Info -->
+            <section class="step-card active" id="step-1">
+                <div class="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center shrink-0">
+                            <i data-lucide="briefcase" class="text-brand-green w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Business Info</h3>
+                            <p class="text-sm text-gray-500 mt-1">Tell us who you are and how your business should
+                                appear online.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                        <div class="field-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="business-name">Business Name *</label>
+                            <input type="text" id="business-name" name="business-name" placeholder="Acme Corp" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(901) 555-0123" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="email">Best Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="ein">EIN Number (Optional)</label>
+                        <input type="text" id="ein" name="ein" placeholder="Tax ID Number">
+                    </div>
+
+                    <div class="field-group">
+                        <label>Business Address *</label>
+                        <div class="space-y-3">
+                            <input type="text" name="street" placeholder="Street Address" required>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <input type="text" name="city" placeholder="City" required class="md:col-span-1">
+                                <input type="text" name="state" placeholder="State" required>
+                                <input type="text" name="zip" placeholder="Zip" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Is this the address you want displayed on your website?</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="display-address" value="Yes" checked
+                                    onclick="toggleAddress(true)"> Yes
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="display-address" value="No" onclick="toggleAddress(false)"> No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="public-address-wrap" class="field-group hidden">
+                        <label for="public-address">Public Address to Display</label>
+                        <input type="text" id="public-address" name="public-address"
+                            placeholder="e.g. Service Area Only, or different address">
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 2: Website & Branding -->
+            <section class="step-card" id="step-2">
+                <div class="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
+                            <i data-lucide="layout" class="text-blue-500 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Website & Branding</h3>
+                            <p class="text-sm text-gray-500 mt-1">Domain requests and branding assets.</p>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="domain">Requested Website URL / Domain Name *</label>
+                        <input type="text" id="domain" name="domain" placeholder="mybusiness.com" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Do you already own this domain?</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="own-domain" value="Yes" onclick="toggleDomain(true)"> Yes
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="own-domain" value="No" checked onclick="toggleDomain(false)">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="domain-details"
+                        class="hidden space-y-4 mb-6 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div class="field-group mb-0">
+                            <label for="registrar">Domain Registrar</label>
+                            <select id="registrar" name="registrar">
+                                <option value="">Select an option...</option>
+                                <option value="GoDaddy">GoDaddy</option>
+                                <option value="Namecheap">Namecheap</option>
+                                <option value="Google">Google Domains</option>
+                                <option value="Cloudflare">Cloudflare</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="field-group mb-0">
+                            <label>Login access available for setup?</label>
+                            <div class="radio-group">
+                                <label class="radio-item"><input type="radio" name="login-access" value="Yes">
+                                    Yes</label>
+                                <label class="radio-item"><input type="radio" name="login-access" value="No"> No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                        <div class="field-group">
+                            <label for="email-names">Requested Email Names</label>
+                            <input type="text" id="email-names" name="email-names" placeholder="info@, support@, etc.">
+                        </div>
+                        <div class="field-group">
+                            <label for="email-count">How many email addresses?</label>
+                            <select id="email-count" name="email-count">
+                                <option value="1">1</option>
+                                <option value="2-3">2–3</option>
+                                <option value="4-5">4–5</option>
+                                <option value="6+">6+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="field-group mb-0">
+                            <label for="logo">Upload Logo</label>
+                            <input type="file" id="logo" name="logo"
+                                class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-green-50 file:text-brand-green hover:file:bg-green-100 cursor-pointer">
+                        </div>
+                        <div class="field-group mb-0">
+                            <label for="brand-guide">Brand Guide (Optional)</label>
+                            <input type="file" id="brand-guide" name="brand-guide"
+                                class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-gray-100 file:text-gray-600 hover:file:bg-gray-200 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="description">Business Description *</label>
+                        <textarea id="description" name="description" rows="3"
+                            placeholder="Describe what your business does..." required></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+                        <div class="field-group">
+                            <label for="services">Top 3 Services *</label>
+                            <input type="text" id="services" name="services"
+                                placeholder="Service 1, Service 2, Service 3" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="area">Service Area *</label>
+                            <input type="text" id="area" name="area" placeholder="Memphis, Midtown, Collierville, etc."
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="socials">Social Media Links</label>
+                        <textarea id="socials" name="socials" rows="2"
+                            placeholder="Facebook, Instagram, LinkedIn, etc."></textarea>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Do you have testimonials to include?</label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="has-testimonials" value="Yes"
+                                    onclick="toggleTestimonials(true)"> Yes</label>
+                            <label class="radio-item"><input type="radio" name="has-testimonials" value="No" checked
+                                    onclick="toggleTestimonials(false)"> No</label>
+                        </div>
+                        <textarea id="testimonials-text" name="testimonials-text" rows="2" class="mt-3 hidden"
+                            placeholder="Paste 1-2 testimonials here..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STEP 3: Goals & Changes -->
+            <section class="step-card" id="step-3">
+                <div class="bg-white rounded-[32px] p-8 md:p-10 shadow-sm border border-gray-100">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center shrink-0">
+                            <i data-lucide="target" class="text-purple-500 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Goals & Changes</h3>
+                            <p class="text-sm text-gray-500 mt-1">Final details for your website setup.</p>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="goal">Primary Goal for Website</label>
+                        <select id="goal" name="goal">
+                            <option value="Get Calls">Get Calls</option>
+                            <option value="Get Form Leads">Get Form Leads</option>
+                            <option value="Book Appointments">Book Appointments</option>
+                            <option value="Sell Online">Sell Online</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="cta">Primary Call-To-Action Text</label>
+                        <input type="text" id="cta" name="cta" placeholder="e.g. Get a Free Quote">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="extra">Anything else we should know?</label>
+                        <textarea id="extra" name="extra" rows="2" placeholder="Any specific notes..."></textarea>
+                    </div>
+
+                    <!-- Highlighted Custom Requests Area -->
+                    <div class="bg-brand-green/5 rounded-2xl p-6 border border-brand-green/20">
+                        <div class="field-group mb-0">
+                            <label for="changes" class="!text-brand-green">Website Changes or Custom Requests *</label>
+                            <p class="help-text mb-3">Examples: change colors, fonts, pictures, layout, wording,
+                                add/remove sections, or special features.</p>
+                            <textarea id="changes" name="changes" rows="5"
+                                class="!bg-white !border-brand-green/20 focus:!border-brand-green"
+                                placeholder="List your specific requests here..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <div
+                class="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t border-gray-100 p-4 z-50 md:relative md:bg-transparent md:border-none md:p-0 md:mt-10 md:mb-10">
+                <div class="flex items-center justify-between gap-4 max-w-3xl mx-auto">
+                    <button type="button" id="btn-back"
+                        class="hidden flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-sm font-bold text-gray-600 hover:bg-gray-50 transition-all">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+                    </button>
+                    <div class="flex-grow"></div>
+                    <button type="button" id="btn-next"
+                        class="w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-green text-white text-sm font-bold shadow-lg shadow-green-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        Next Step <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <!-- Submit button only on last step -->
+                    <button type="submit" id="btn-submit"
+                        class="hidden w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-dark text-white text-sm font-bold shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        Submit Intake <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Footer Note -->
+        <div class="mt-8 text-center pb-20">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-100 text-xs text-gray-400">
+                <i data-lucide="shield" class="w-3 h-3 text-brand-green"></i>
+                Your information is used only for onboarding and website setup.
+            </div>
+            <p class="mt-6 text-[10px] text-gray-300 uppercase tracking-[0.2em] font-medium">&copy; 2025 SmartWeb
+                Memphis</p>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // State
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Elements
+        const steps = [
+            document.getElementById('step-1'),
+            document.getElementById('step-2'),
+            document.getElementById('step-3')
+        ];
+        const navItems = [
+            document.getElementById('step-nav-1'),
+            document.getElementById('step-nav-2'),
+            document.getElementById('step-nav-3')
+        ];
+        const btnNext = document.getElementById('btn-next');
+        const btnBack = document.getElementById('btn-back');
+        const btnSubmit = document.getElementById('btn-submit');
+        const indicatorText = document.getElementById('step-indicator-text');
+
+        // Functions
+        function toggleAddress(show) {
+            document.getElementById('public-address-wrap').classList.toggle('hidden', show);
+        }
+
+        function toggleDomain(show) {
+            document.getElementById('domain-details').classList.toggle('hidden', !show);
+        }
+
+        function toggleTestimonials(show) {
+            document.getElementById('testimonials-text').classList.toggle('hidden', !show);
+        }
+
+        function validateStep(stepNum) {
+            const currentStepEl = steps[stepNum - 1];
+            const inputs = currentStepEl.querySelectorAll('input[required], textarea[required], select[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function updateUI() {
+            // Update Cards
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep - 1);
+            });
+
+            // Update Stepper
+            navItems.forEach((item, index) => {
+                const num = index + 1;
+                item.classList.toggle('active', num === currentStep);
+                item.classList.toggle('completed', num < currentStep);
+            });
+
+            // Update Buttons
+            btnBack.classList.toggle('hidden', currentStep === 1);
+            btnNext.classList.toggle('hidden', currentStep === totalSteps);
+            btnSubmit.classList.toggle('hidden', currentStep !== totalSteps);
+
+            // Update Text
+            indicatorText.innerText = `Step ${currentStep} of ${totalSteps}`;
+
+            // Reset Icons
+            lucide.createIcons();
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Event Listeners
+        btnNext.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    updateUI();
+                }
+            }
+        });
+
+        btnBack.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        });
+
+        // Initial setup
+        updateUI();
+    </script>
+</body>
+
+</html>
