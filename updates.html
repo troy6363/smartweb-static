@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Website Update | SmartWeb Memphis</title>
+    <meta name="description" content="Submit a request for updates to your existing website.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#22c55e',
+                            gray: '#f3f4f6',
+                            dark: '#050A14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --brand-green: #22c55e;
+            --brand-gray: #f3f4f6;
+            --brand-dark: #050A14;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 60%),
+                radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+            background-attachment: fixed;
+            color: var(--brand-dark);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .glass-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            transition: all 0.2s;
+            outline: none;
+        }
+
+        /* Ensure pl-11 utility works despite the global selector above */
+        .pl-11 {
+            padding-left: 2.75rem !important;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--brand-green);
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .card-animate {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen py-10 px-6">
+
+    <!-- Header -->
+    <header class="max-w-3xl mx-auto mb-10 text-center">
+        <a href="index.html"
+            class="inline-flex items-center gap-3 mb-6 bg-white px-6 py-4 rounded-3xl border border-gray-100 shadow-sm">
+            <img src="./assets/logo-lightbulb.png" alt="Logo" class="h-10 w-auto">
+            <span class="text-xl font-bold tracking-tight text-gray-900">SmartWeb Memphis</span>
+        </a>
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Request a Website Update</h1>
+        <p class="text-gray-500 text-lg">Existing clients can use this form to submit changes.</p>
+    </header>
+
+    <main class="max-w-xl mx-auto">
+        <div class="glass-card rounded-[32px] p-8 md:p-10 shadow-lg card-animate">
+            <form name="client-update-request" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="client-update-request">
+
+                <!-- Honeypot -->
+                <p class="hidden">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+
+                <div class="field-group">
+                    <label for="name">Full Name *</label>
+                    <div class="relative">
+                        <i data-lucide="user"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="pl-11">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="field-group">
+                        <label for="phone">Phone Number *</label>
+                        <div class="relative">
+                            <i data-lucide="phone"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="(901) 555-0123" required
+                                class="pl-11">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="email">Email Address *</label>
+                        <div class="relative">
+                            <i data-lucide="mail"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required
+                                class="pl-11">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="website">Website Address (URL) *</label>
+                    <div class="relative">
+                        <i data-lucide="globe"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                        <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" required
+                            class="pl-11">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="changes">Description of Changes *</label>
+                    <textarea id="changes" name="changes" rows="5"
+                        placeholder="Describe the updates you would like us to make, please be detailed"
+                        required></textarea>
+                </div>
+
+                <p class="text-center text-xs text-gray-400 mb-6 italic">
+                    We process updates in 24-48 hours but most likely sooner.
+                </p>
+
+                <!-- reCAPTCHA -->
+                <div class="flex justify-center mb-8" data-netlify-recaptcha="true"></div>
+
+                <button type="submit"
+                    class="w-full flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-brand-dark text-white text-sm font-bold shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Submit Request <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="mt-8 text-center text-xs text-white/60">
+            <a href="intake.html" class="inline-flex items-center gap-1 hover:text-brand-green transition-colors">
+                <i data-lucide="arrow-left" class="w-3 h-3"></i> Back to Intake Form
+            </a>
+            <p class="mt-4 text-[10px] text-white/40 uppercase tracking-widest">&copy; 2025 SmartWeb Memphis</p>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

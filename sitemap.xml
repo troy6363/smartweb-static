@@ -16,6 +16,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://smartwebmemphis.com/updates</loc>
+    <lastmod>2026-02-25</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://smartwebmemphis.com/privacy</loc>
     <lastmod>2026-02-24</lastmod>
     <priority>0.3</priority>
