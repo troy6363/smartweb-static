@@ -224,8 +224,14 @@
         </div>
 
         <!-- Form Start -->
-        <form name="new-client-intake" method="POST" data-netlify="true" enctype="multipart/form-data">
+        <form name="new-client-intake" method="POST" data-netlify="true" enctype="multipart/form-data"
+            netlify-honeypot="bot-field" data-netlify-recaptcha="true">
             <input type="hidden" name="form-name" value="new-client-intake">
+
+            <!-- Honeypot field (hidden from humans) -->
+            <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
 
             <!-- STEP 1: Business Info -->
             <section class="step-card active" id="step-1">
@@ -467,6 +473,9 @@
                                 placeholder="List your specific requests here..." required></textarea>
                         </div>
                     </div>
+
+                    <!-- reCAPTCHA widget -->
+                    <div class="mt-8 flex justify-center" data-netlify-recaptcha="true"></div>
                 </div>
             </section>
 
