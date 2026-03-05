@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Bartlett TN | SmartWeb Memphis Service Area</title>
+    <meta name="description"
+        content="SmartWeb Memphis provides professional web design and SEO services in Bartlett, TN. Growing local businesses with high-converting, custom websites.">
+    <meta name="keywords"
+        content="web design Bartlett TN, website developer Bartlett Tennessee, local SEO Bartlett, Bartlett business marketing">
+    <meta name="author" content="SmartWeb Memphis">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://smartwebmemphis.com/bartlett">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Web Design Bartlett TN | SmartWeb Memphis">
+    <meta property="og:description"
+        content="Custom web design and local SEO for businesses in Bartlett, TN. See your design before you pay.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartwebmemphis.com/bartlett">
+    <meta property="og:image" content="https://smartwebmemphis.com/assets/logo-v2.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #050A14;
+            --cyan: #22d3ee;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        #nav {
+            transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+        }
+
+        #nav.scrolled {
+            background: rgba(5, 10, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #67e8f9 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            color: #050A14;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.85rem 2rem;
+            transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4);
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34, 211, 238, 0.35);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            color: #67e8f9;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        #mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            background: rgba(5, 10, 20, 0.97);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        #mobile-menu.open {
+            display: flex;
+        }
+
+        #mobile-menu a {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            transition: color 0.2s, background 0.2s;
+        }
+
+        #mobile-menu a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="canvas-container" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+    <header id="nav" class="fixed top-0 left-0 right-0 z-50 w-full">
+        <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                    class="h-8 w-auto object-contain mix-blend-screen">
+                <span class="text-white font-semibold text-base tracking-tight leading-tight">
+                    SmartWeb<br><span
+                        class="text-[11px] font-normal text-cyan-400/80 tracking-widest uppercase">Memphis</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm text-white/60">
+                <div class="relative group">
+                    <button class="hover:text-white transition-colors flex items-center gap-1 py-4">
+                        Services <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-slate-900/95 border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl backdrop-blur-xl">
+                        <a href="web-design.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Web
+                            Design</a>
+                        <a href="local-seo.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Local
+                            SEO</a>
+                        <a href="maintenance.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Maintenance</a>
+                        <a href="lead-generation.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Lead Gen</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-white transition-colors flex items-center gap-1 py-4">
+                        Areas <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-64 bg-slate-900/95 border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl backdrop-blur-xl grid grid-cols-2">
+                        <a href="memphis.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Memphis</a>
+                        <a href="cordova.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Cordova</a>
+                        <a href="germantown.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Germantown</a>
+                        <a href="bartlett.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Bartlett</a>
+                        <a href="collierville.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Collierville</a>
+                        <a href="southaven.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Southaven</a>
+                        <a href="olive-branch.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Olive
+                            Branch</a>
+                        <a href="hernando.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Hernando</a>
+                        <a href="millington.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Millington</a>
+                        <a href="eads.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Eads</a>
+                        <a href="arlington.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Arlington</a>
+                    </div>
+                </div>
+                <a href="index.html#process" class="hover:text-white transition-colors py-4">How It Works</a>
+                <a href="index.html#results" class="hover:text-white transition-colors py-4">Results</a>
+                <a href="index.html#contact" class="hover:text-white transition-colors py-4">Contact</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="tel:9016215898"
+                    class="text-sm font-medium text-white/80 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> 901-621-5898
+                </a>
+                <a href="booking.html" class="btn-primary text-sm px-5 py-2.5">Get Free Preview</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle menu">
+                <span class="block w-5 h-0.5 bg-white/70 rounded transition-all" id="ham-1"></span>
+                <span class="block w-5 h-0.5 bg-white/70 rounded transition-all" id="ham-2"></span>
+                <span class="block w-5 h-0.5 bg-white/70 rounded transition-all" id="ham-3"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu">
+            <div class="px-5 py-2 text-xs font-bold text-white/40 uppercase tracking-widest">Services</div>
+            <a href="web-design.html">Custom Web Design</a>
+            <a href="local-seo.html">Local SEO Strategy</a>
+            <a href="maintenance.html">Website Maintenance</a>
+            <a href="lead-generation.html">Lead Generation</a>
+            <div class="px-5 py-2 text-xs font-bold text-white/40 uppercase tracking-widest mt-2">Service Areas</div>
+            <div class="grid grid-cols-2">
+                <a href="memphis.html">Memphis</a>
+                <a href="cordova.html">Cordova</a>
+                <a href="germantown.html">Germantown</a>
+                <a href="bartlett.html">Bartlett</a>
+                <a href="collierville.html">Collierville</a>
+                <a href="southaven.html">Southaven</a>
+                <a href="olive-branch.html">Olive Branch</a>
+                <a href="hernando.html">Hernando</a>
+                <a href="millington.html">Millington</a>
+                <a href="eads.html">Eads</a>
+                <a href="arlington.html">Arlington</a>
+            </div>
+            <a href="index.html#process" class="mt-2">How It Works</a>
+            <a href="index.html#results">Results</a>
+            <a href="index.html#contact">Contact</a>
+            <div class="px-5 py-4">
+                <a href="booking.html" class="btn-primary w-full text-sm text-center block">Get Free Preview</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 w-full flex flex-col items-center">
+
+        <!-- Hero Section -->
+        <section class="relative w-full pt-40 pb-20 px-5 md:px-8 overflow-hidden">
+            <div class="orb w-[600px] h-[600px] bg-blue-500/8 top-0 -left-48"></div>
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <div class="badge">Bartlett Service Area</div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+                    Custom Web Design for <span class="text-gradient-cyan">Bartlett, TN</span>
+                </h1>
+                <p class="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+                    SmartWeb Memphis helps Bartlett businesses thrive in a digital-first world. We build websites that
+                    don't just look great — they drive real calls and customers in the Bartlett community.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <a href="booking.html" class="btn-primary">Start My Bartlett Project</a>
+                    <a href="index.html#services"
+                        class="px-8 py-3.5 rounded-full border border-white/10 text-white/70 hover:bg-white/5 transition-all">Explore
+                        Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full max-w-6xl px-5 md:px-8 py-20 reveal-on-scroll">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-bold text-white">Bartlett's Local Web Design Choice</h2>
+                    <p class="text-white/50 leading-relaxed">
+                        From the historic Stage Road area to newer developments across the city, Bartlett businesses
+                        need a digital presence that reflects their local roots. We provide the technical expertise of a
+                        large agency with the personal touch of a local Mid-South partner.
+                    </p>
+                    <ul class="space-y-4 text-white/70">
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-cyan-400 w-5 h-5"></i>
+                            Optimized for Bartlett & Memphis local search</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-cyan-400 w-5 h-5"></i>
+                            Fast, secure, and mobile-ready</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-cyan-400 w-5 h-5"></i>
+                            Direct, local accountability</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 relative overflow-hidden group">
+                    <h3 class="text-xl font-bold text-white mb-4">Bartlett Business Growth</h3>
+                    <p class="text-sm text-white/40 mb-6">Our websites are built specifically for Bartlett businesses
+                        that want to rank higher on Google and capture more local leads.</p>
+                    <a href="booking.html" class="btn-primary inline-flex items-center gap-2">Get Results <i
+                            data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 w-full border-t border-white/[0.06] px-5 md:px-8 py-10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2.5">
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                    class="h-6 w-auto object-contain mix-blend-screen opacity-70">
+                <span class="text-white/50 text-sm font-medium">SmartWeb Memphis</span>
+            </div>
+
+            <div class="flex gap-6 text-xs text-white/30">
+                <a href="privacy.html" class="hover:text-white/60 transition-colors">Privacy</a>
+                <a href="terms.html" class="hover:text-white/60 transition-colors">Terms</a>
+                <a href="index.html#contact" class="hover:text-white/60 transition-colors">Contact</a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-xs text-white/30">6000 Poplar Avenue Ste 250, Memphis, TN 38119</p>
+                <p class="text-[10px] text-white/20 mt-1">&copy; 2025 SmartWeb Memphis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        lucide.createIcons();
+
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 30);
+        }, { passive: true });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const ham1 = document.getElementById('ham-1');
+        const ham2 = document.getElementById('ham-2');
+        const ham3 = document.getElementById('ham-3');
+        let menuOpen = false;
+
+        hamburger.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+            ham1.style.transform = menuOpen ? 'translateY(8px) rotate(45deg)' : '';
+            ham2.style.opacity = menuOpen ? '0' : '1';
+            ham3.style.transform = menuOpen ? 'translateY(-8px) rotate(-45deg)' : '';
+        });
+
+        // 3D Background
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(5, 5, 20);
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        dirLight.position.set(10, 10, 5);
+        scene.add(dirLight);
+
+        function createExtrudedBoxShape() {
+            const shape = new THREE.Shape();
+            const angleStep = Math.PI * 0.5;
+            const radius = 1;
+            shape.absarc(2, 2, radius, angleStep * 0, angleStep * 1);
+            shape.absarc(-2, 2, radius, angleStep * 1, angleStep * 2);
+            shape.absarc(-2, -2, radius, angleStep * 2, angleStep * 3);
+            shape.absarc(2, -2, radius, angleStep * 3, angleStep * 4);
+            return new THREE.ExtrudeGeometry(shape, {
+                depth: 0.3, bevelEnabled: true,
+                bevelThickness: 0.05, bevelSize: 0.05,
+                bevelSegments: 20, curveSegments: 20
+            });
+        }
+
+        const geometry = createExtrudedBoxShape();
+        geometry.center();
+
+        const material = new THREE.MeshPhysicalMaterial({
+            color: 0x232323, metalness: 1, roughness: 0.3,
+            reflectivity: 0.5, ior: 1.5, iridescence: 1,
+            iridescenceIOR: 1.3, iridescenceThicknessRange: [100, 400],
+            specularIntensity: 1.0, specularColor: 0xffffff
+        });
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        for (let i = 0; i < 50; i++) {
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set((i - 25) * 0.75, 0, 0);
+            mesh.rotation.set((i - 10) * 0.1, Math.PI / 2, 0);
+            group.add(mesh);
+        }
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            group.rotation.x += clock.getDelta() * 0.05;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }, { passive: true });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

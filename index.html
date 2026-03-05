@@ -761,10 +761,58 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8 text-sm text-white/60">
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#process" class="hover:text-white transition-colors">How It Works</a>
-                <a href="#results" class="hover:text-white transition-colors">Results</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <div class="relative group">
+                    <button class="hover:text-white transition-colors flex items-center gap-1 py-4">
+                        Services <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-slate-900/95 border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl backdrop-blur-xl">
+                        <a href="web-design.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Web
+                            Design</a>
+                        <a href="local-seo.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Local
+                            SEO</a>
+                        <a href="maintenance.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Maintenance</a>
+                        <a href="lead-generation.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Lead Gen</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button class="hover:text-white transition-colors flex items-center gap-1 py-4">
+                        Areas <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-64 bg-slate-900/95 border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl backdrop-blur-xl grid grid-cols-2">
+                        <a href="memphis.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Memphis</a>
+                        <a href="cordova.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Cordova</a>
+                        <a href="germantown.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Germantown</a>
+                        <a href="bartlett.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Bartlett</a>
+                        <a href="collierville.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Collierville</a>
+                        <a href="southaven.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Southaven</a>
+                        <a href="olive-branch.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Olive
+                            Branch</a>
+                        <a href="hernando.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Hernando</a>
+                        <a href="millington.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Millington</a>
+                        <a href="eads.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Eads</a>
+                        <a href="arlington.html"
+                            class="block px-4 py-2 hover:bg-white/10 hover:text-cyan-400 transition-colors">Arlington</a>
+                    </div>
+                </div>
+                <a href="#process" class="hover:text-white transition-colors py-4">How It Works</a>
+                <a href="#results" class="hover:text-white transition-colors py-4">Results</a>
+                <a href="#contact" class="hover:text-white transition-colors py-4">Contact</a>
             </nav>
 
             <!-- CTA -->
@@ -786,8 +834,23 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu">
-            <a href="#services">Services</a>
-            <a href="#process">How It Works</a>
+            <div class="px-5 py-2 text-xs font-bold text-white/40 uppercase tracking-widest">Services</div>
+            <a href="web-design.html">Custom Web Design</a>
+            <a href="local-seo.html">Local SEO Strategy</a>
+            <a href="maintenance.html">Website Maintenance</a>
+            <a href="lead-generation.html">Lead Generation</a>
+            <div class="px-5 py-2 text-xs font-bold text-white/40 uppercase tracking-widest mt-2">Service Areas</div>
+            <div class="grid grid-cols-2">
+                <a href="memphis.html">Memphis</a>
+                <a href="cordova.html">Cordova</a>
+                <a href="germantown.html">Germantown</a>
+                <a href="bartlett.html">Bartlett</a>
+                <a href="collierville.html">Collierville</a>
+                <a href="southaven.html">Southaven</a>
+                <a href="olive-branch.html">Olive Branch</a>
+                <a href="hernando.html">Hernando</a>
+            </div>
+            <a href="#process" class="mt-2">How It Works</a>
             <a href="#results">Results</a>
             <a href="#contact">Contact</a>
             <div class="px-5 py-4">
@@ -1174,24 +1237,24 @@
                     </div>
                 </div>
 
-                <!-- Client 3: Premier Polishing of Memphis -->
+                <!-- Client 3: Gleam Mobile Detailing -->
                 <div
                     class="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 transition-all hover:border-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/10">
                     <div
                         class="aspect-video bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center relative overflow-hidden">
                         <!-- Website Preview Image -->
-                        <img src="./assets/memphispremier.png" alt="Premier Polishing Website Preview"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="./assets/gleamweb.png" alt="Gleam Mobile Detailing Website Preview"
+                            class="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-105">
                         <div
                             class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="https://demo3.smartwebmemphis.com" target="_blank" rel="noopener noreferrer"
+                            <a href="https://gleammobiledetailing.com" target="_blank" rel="noopener noreferrer"
                                 class="btn-primary text-xs px-4 py-2">Visit Website</a>
                         </div>
                     </div>
                     <div class="p-6 space-y-2 text-center">
-                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Premier
-                            Polishing of Memphis</h3>
-                        <p class="text-xs text-white/40">Premier Auto Detailing</p>
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Gleam
+                            Mobile Detailing</h3>
+                        <p class="text-xs text-white/40">Mobile Auto Detailing</p>
                     </div>
                 </div>
 
