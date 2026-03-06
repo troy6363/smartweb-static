@@ -21,6 +21,40 @@
     <meta property="og:url" content="https://smartwebmemphis.com/web-design">
     <meta property="og:image" content="https://smartwebmemphis.com/assets/logo-v2.png">
 
+    <!-- Structured Data: Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Custom Web Design",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "SmartWeb Memphis",
+            "url": "https://smartwebmemphis.com/",
+            "logo": "https://smartwebmemphis.com/assets/logo-v2.png",
+            "image": "https://smartwebmemphis.com/assets/logo-v2.png",
+            "telephone": "+1-901-621-5898",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "6000 Poplar Avenue Ste 250",
+                "addressLocality": "Memphis",
+                "addressRegion": "TN",
+                "postalCode": "38119",
+                "addressCountry": "US"
+            }
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Memphis"},
+            {"@type": "City", "name": "Germantown"},
+            {"@type": "City", "name": "Collierville"},
+            {"@type": "City", "name": "Bartlett"},
+            {"@type": "City", "name": "Cordova"}
+        ],
+        "description": "Custom, high-performance web design services for local Memphis businesses. We build fast, secure, and mobile-optimized websites from scratch."
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +80,43 @@
                 }
             }
         }
+    </script>
+
+    <!-- Structured Data: FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How long does it take to build a custom website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically, a custom high-performance website takes between 2 to 4 weeks from the initial preview to live launch, depending on the complexity and features required."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Do you use templates like Wix, Squarespace, or WordPress?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, we don't use templates. Every site is hand-coded from scratch using modern technologies. This ensures your site is significantly faster, more secure, and better optimized for SEO than template-based builders."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Will my website work on mobile devices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We follow a mobile-first design philosophy, ensuring your website looks and functions perfectly on smartphones, tablets, and desktops."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Can I update the content on my website myself?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we can build in easy-to-use content management tools, or you can opt for our Maintenance plan where we handle all updates for you."
+            }
+        }]
+    }
     </script>
 
     <style>
@@ -194,7 +265,7 @@
         <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2.5 shrink-0">
-                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis - Professional Web Design & SEO Agency"
                     class="h-8 w-auto object-contain mix-blend-screen">
                 <span class="text-white font-semibold text-base tracking-tight leading-tight">
                     SmartWeb<br><span
@@ -418,12 +489,43 @@
             <div class="section-divider"></div>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="w-full max-w-4xl px-5 md:px-8 pb-28 space-y-12 reveal-on-scroll">
+            <div class="text-center space-y-3">
+                <p class="badge mx-auto inline-flex">Questions?</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="grid gap-4">
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">How long does it take to build a custom website?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Typically, a custom high-performance website takes
+                        between 2 to 4 weeks from the initial preview to live launch, depending on complexity.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">Do you use templates like Wix or Squarespace?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">No. We hand-code every site to ensure it's faster,
+                        more secure, and ranks better on Google than template-based sites.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">Will my website work on mobile devices?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Yes. Every site we build is mobile-first, meaning
+                        it's designed to look perfect on smartphones and tablets first.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">Can I update the content myself?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">Yes. We can provide a simple way for you to edit
+                        text and images, or you can let us handle it via our maintenance plans.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="relative z-10 w-full border-t border-white/[0.06] px-5 md:px-8 py-10">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2.5">
-                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis - Professional Web Design & SEO Agency"
                     class="h-6 w-auto object-contain mix-blend-screen opacity-70">
                 <span class="text-white/50 text-sm font-medium">SmartWeb Memphis</span>
             </div>

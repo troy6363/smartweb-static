@@ -21,6 +21,40 @@
     <meta property="og:url" content="https://smartwebmemphis.com/lead-generation">
     <meta property="og:image" content="https://smartwebmemphis.com/assets/logo-v2.png">
 
+    <!-- Structured Data: Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Lead Generation",
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "SmartWeb Memphis",
+            "url": "https://smartwebmemphis.com/",
+            "logo": "https://smartwebmemphis.com/assets/logo-v2.png",
+            "image": "https://smartwebmemphis.com/assets/logo-v2.png",
+            "telephone": "+1-901-621-5898",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "6000 Poplar Avenue Ste 250",
+                "addressLocality": "Memphis",
+                "addressRegion": "TN",
+                "postalCode": "38119",
+                "addressCountry": "US"
+            }
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Memphis"},
+            {"@type": "City", "name": "Germantown"},
+            {"@type": "City", "name": "Collierville"},
+            {"@type": "City", "name": "Bartlett"},
+            {"@type": "City", "name": "Cordova"}
+        ],
+        "description": "High-performance lead generation systems for local businesses. We turn your website into a 24/7 sales machine with call tracking and high-converting forms."
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +80,43 @@
                 }
             }
         }
+    </script>
+
+    <!-- Structured Data: FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What is the best way to generate leads in Memphis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A combination of local SEO and high-converting landing pages. We build systems that make it extremely easy for a locally-focused customer to contact you."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How do you track hvor leads come from?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use call tracking, form submission logs, and integrated analytics so you know exactly which marketing efforts are driving phone calls and emails."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What is a 'high-converting' landing page?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It's a page specifically designed with one goal: to get a visitor to take action. This involves psychological triggers, clear calls-to-action, and fast load times."
+            }
+        }, {
+            "@type": "Question",
+            "name": "Do you guarantee a certain number of leads?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While we can't control market demand, we can guarantee that your website will be engineered to convert the highest percentage of visitors possible."
+            }
+        }]
+    }
     </script>
 
     <style>
@@ -193,7 +264,7 @@
         <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2.5 shrink-0">
-                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis - Professional Web Design & SEO Agency"
                     class="h-8 w-auto object-contain mix-blend-screen">
                 <span class="text-white font-semibold text-base tracking-tight leading-tight">
                     SmartWeb<br><span
@@ -422,12 +493,43 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="w-full max-w-4xl px-5 md:px-8 pb-28 space-y-12 reveal-on-scroll">
+            <div class="text-center space-y-3">
+                <p class="badge mx-auto inline-flex">Lead Gen FAQs</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="grid gap-4">
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">How do I get more local leads?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">It's a mix of appearing in Memphis searches and
+                        having a site that makes people want to call you immediately.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">How do you track lead sources?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">We use call tracking and form analytics to see
+                        exactly where your customers came from.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">What is high-conversion design?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">It's layout and content designed to remove friction
+                        and get people to hire you faster.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] space-y-3">
+                    <h3 class="text-lg font-semibold text-white">Do you guarantee leads?</h3>
+                    <p class="text-sm text-white/40 leading-relaxed">We guarantee your site will be built with every
+                        modern tool to maximize your conversion rates.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="relative z-10 w-full border-t border-white/[0.06] px-5 md:px-8 py-10">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2.5">
-                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis Logo"
+                <img src="./assets/logo-lightbulb.png" alt="SmartWeb Memphis - Professional Web Design & SEO Agency"
                     class="h-6 w-auto object-contain mix-blend-screen opacity-70">
                 <span class="text-white/50 text-sm font-medium">SmartWeb Memphis</span>
             </div>
